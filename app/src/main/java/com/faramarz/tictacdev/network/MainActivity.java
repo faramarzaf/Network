@@ -3,6 +3,7 @@ package com.faramarz.tictacdev.network;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import com.bumptech.glide.Glide;
 import com.faramarz.tictacdev.network.Model.IPModel;
 import com.faramarz.tictacdev.network.network.ApiClient;
 import com.faramarz.tictacdev.network.network.ApiInterface;
+import com.faramarz.tictacdev.network.retrofit_post.PostActivity;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -27,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     ImageView flag;
     TextView txtCountry, txtIp, txtLocalTime;
-    Button btnCall;
+    Button btnCall, btnPostPage;
     ProgressDialog dialog;
 
     @Override
@@ -37,9 +39,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bind();
         changeStatusBarColor();
         dialog = new ProgressDialog(this);
-        btnCall.setOnClickListener(this);
+        clickEvents();
     }
 
+    private void clickEvents() {
+        btnCall.setOnClickListener(this);
+        btnPostPage.setOnClickListener(this);
+    }
 
     private void bind() {
         flag = findViewById(R.id.flag);
@@ -47,12 +53,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         txtIp = findViewById(R.id.txtIp);
         txtLocalTime = findViewById(R.id.txtLocalTime);
         btnCall = findViewById(R.id.btnCall);
+        btnPostPage = findViewById(R.id.btnPostPage);
     }
 
 
     @Override
     public void onClick(View v) {
-        getIp();
+        int id = v.getId();
+        switch (id) {
+            case R.id.btnCall:
+                getIp();
+                break;
+            case R.id.btnPostPage:
+                startActivity(new Intent(MainActivity.this, PostActivity.class));
+                break;
+        }
+
     }
 
     private void getIp() {

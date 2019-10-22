@@ -120,6 +120,21 @@
 
                 />
 
+
+            <Button
+                android:id="@+id/btnPostPage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/bg_btn_call"
+                android:text="Post Sample"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18sp"
+
+                />
+
+
         </LinearLayout>
 
     </RelativeLayout>
@@ -132,12 +147,10 @@
         android:layout_below="@+id/vasl"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
+        android:adjustViewBounds="true"
         android:background="@drawable/bg_ip_list"
         android:elevation="8dp"
-android:adjustViewBounds="true"
-        android:scaleType="center"
-        />
-
+        android:scaleType="center" />
 
 
 </RelativeLayout>
