@@ -59,10 +59,8 @@
                 android:id="@+id/txtCountry"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:background="@drawable/bg_texts"
                 android:padding="6dp"
-
                 android:textColor="#000"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -100,7 +98,6 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_texts"
                 android:padding="6dp"
-
                 android:textColor="#000"
                 android:textSize="17sp"
                 android:textStyle="bold"

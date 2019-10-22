@@ -99,6 +99,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void showDialog() {
         dialog.setTitle("Getting Data");
         dialog.setMessage("Please wait to load data...");
+        dialog.setCancelable(false);
         dialog.show();
     }
 
